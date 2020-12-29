@@ -1,0 +1,108 @@
+$red: hsl(0, 78%, 62%);
+$cyan: hsl(180, 62%, 55%);
+$orange: hsl(34, 97%, 64%);
+$blue: hsl(212, 86%, 64%);
+
+$Very-Dark-Blue: hsl(234, 12%, 34%);
+$Grayish-Blue: hsl(229, 6%, 66%);
+$Very-Light-Gray: hsl(0, 0%, 98%);
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;600&display=swap');
+
+*,
+::after,
+::before {
+  padding: 0;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+body {
+  font-size: 15px;
+  max-width: 1440px;
+  min-height: 100vh;
+  margin: 4em auto;
+  background-color: $Very-Light-Gray;
+}
+
+header {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 5em;
+  h1 {
+    color: $Very-Dark-Blue;
+    font-weight: 200;
+    font-size: 2.5em;
+    span {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.5em;
+    }
+  }
+  p {
+    color: $Grayish-Blue;
+    font-weight: 400;
+    font-size: 1em;
+    max-width: 502px;
+  }
+}
+
+section {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 10px;
+  .cards {
+    flex-grow: 1;
+    width: 25%;
+    .card {
+      margin: 12px;
+      background-color: white;
+      box-shadow: 0 10px 20px rgba($Grayish-Blue, 0.4);
+      border-radius: 0.3em;
+      padding: 2.7em;
+      min-height: 300px;
+      position: relative;
+      &-title {
+        font-weight: 600;
+        font-size: 1.3em;
+        color: $Very-Dark-Blue;
+        margin-bottom: 1em;
+      }
+      &-description {
+        font-weight: 400;
+        font-size: 0.9em;
+        color: $Grayish-Blue;
+      }
+      &-icon {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
+      }
+    }
+  }
+  @media (max-width: 765px) {
+    flex-flow: column wrap;
+    padding: 0 15px;
+    .cards {
+      flex-grow: 1;
+      width: 100%;
+    }
+  }
+}
+
+.supervisor {
+  border-top: 3px solid $cyan;
+}
+.team {
+  border-top: 3px solid $red;
+}
+.karma {
+  border-top: 3px solid $orange;
+}
+.calculator {
+  border-top: 3px solid $blue;
+}
